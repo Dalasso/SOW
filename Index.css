@@ -1,32 +1,57 @@
 header {
-background: #a15555;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-nav {
-position: sticky;
-top: 0;
-z-index: 1000;
+
+:root {
+  --nav-height: 64px; /* altura del nav para compensar anclajes */
 }
-nav ul {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-}
-nav ul li {
-margin-right: 1rem;
-}
-nav ul li a {
-text-decoration: none;
-color: #000000;
-}html {
+
+html {
 scroll-behavior: smooth;
+}
+
+/* Navegación sticky con elementos equidistantes */
+nav {
+  position: fixed; /* fijo siempre en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95); /* coincide con header */
+  backdrop-filter: blur(4px);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around; /* distribuye los items equidistantemente */
+  gap: 1rem;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  font-weight: 600;
 }
 nav ul li a:hover,
 nav ul li a:focus {
-color: #007acc;
-outline: none;
+  color: #007acc;
+  outline: none;
 }
+
 .cover {
 display: flex;
 justify-content: center;
@@ -66,19 +91,30 @@ border-color: transparent;
 }
 }
 .analysis-text {
-columns: 1;
-column-gap: 2rem;
-}
-@media (min-width: 800px) {
-.analysis-text {
-columns: 2;
-}
+  /* Por defecto en pantallas grandes: 2 columnas; en móvil caerá a 1 (media query abajo) */
+  columns: 2;
+  column-gap: 2rem;
+  /* Evita que elementos hijos se dividan entre columnas */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
 }
 
-/* Force single column for specific analysis blocks */
-.analysis-text.single-column {
-  columns: 1;
-  column-gap: 2rem;
+/* Asegurar que los párrafos se comporten como bloques y no se rompan entre columnas */
+.analysis-text p {
+  display: block;
+  margin: 0 0 1rem 0;
+  /* Evita que un párrafo se divida entre columnas */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+/* En pantallas pequeñas usar una sola columna para legibilidad */
+@media (max-width: 799px) {
+  .analysis-text {
+    columns: 1;
+  }
 }
 
 /* Estilo para enlace grande a Ponpon Mania */
@@ -108,4 +144,39 @@ columns: 2;
   width: 100%;
   border: none;
   min-height: 600px;
+}
+
+/* Espaciado consistente entre secciones y compensación por nav sticky */
+main > section {
+  padding: 3rem 1.25rem;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+  box-sizing: border-box;
+}
+
+/* Evitar que el nav fijo solape contenido: añadir padding al body */
+body {
+  padding-top: var(--nav-height);
+  /* Tipografía global solicitada */
+  font-family: "Times New Roman", Times;
+}
+
+/* Separador visual ligero entre secciones (opcional) */
+main > section + section {
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: space-around;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  :root {
+    --nav-height: 56px;
+  }
+}
+.container {
+padding: 25px;
+padding-bottom: 10px;
 }
