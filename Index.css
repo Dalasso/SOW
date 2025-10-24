@@ -120,7 +120,7 @@ border-color: transparent;
 /* Estilo para enlace grande a Ponpon Mania */
 .big-link {
   display: inline-block;
-  width: 100%;
+  width: 98%;
   text-align: center;
   background: #222;
   color: #fff;
@@ -204,15 +204,228 @@ padding-bottom: 10px;
 
 /* Responsive: apilar en pantallas pequeñas */
 @media (max-width: 720px) {
-  .yodezeen-row {
+  .ponponmania-row {
     flex-direction: column;
   }
-  .yodezeen-images {
+  .ponponmania-images {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  .yodezeen-images .im {
+  .ponponmania-images .im {
     width: 60%;
   }
+}
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: space-around;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  :root {
+    --nav-height: 56px;
+  }
+}
+.container {
+padding: 25px;
+padding-bottom: 10px;
+}
+.ponponmania-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.ponponmania-images {
+  flex: 0 0 890px;
+}
+.ponponmania-images .im {
+  width: 100%;
+  height: 520px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.ponponmania-text {
+  flex: 1 1 360px;
+  min-width: 220px;
+  line-height: 1.6;
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 720px) {
+  .flabbergast-row {
+    flex-direction: column;
+  }
+  .flabbergast-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .flabbergast-images .im {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .flabbergast-row {
+    flex-direction: column;
+  }
+  .flabbergast-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .flabbergast-images .im {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: space-around;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  :root {
+    --nav-height: 56px;
+  }
+}
+.container {
+padding: 25px;
+padding-bottom: 10px;
+}
+.flabbergast-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.flabbergast-images {
+  flex: 0 0 890px;
+}
+.flabbergast-images .im {
+  width: 100%;
+  height: 520px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.flabbergast-text {
+  flex: 1 1 360px;
+  min-width: 220px;
+  line-height: 1.6;
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 720px) {
+  .flabbergast-row {
+    flex-direction: column;
+  }
+  .flabbergast-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .flabbergast-images .im {
+    width: 60%;
+  }
+}
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 720px) {
+  .buzzworthy-row {
+    flex-direction: column;
+  }
+  .buzzworthy-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .buzzworthy-images .im {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .buzzworthy-row {
+    flex-direction: column;
+  }
+  .buzzworthy-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .buzzworthy-images .im {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: space-around;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  :root {
+    --nav-height: 56px;
+  }
+}
+.container {
+padding: 25px;
+padding-bottom: 10px;
+}
+.buzzworthy-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.buzzworthy-images {
+  flex: 0 0 890px;
+}
+.buzzworthy-images .im {
+  width: 100%;
+  height: 520px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.buzzworthy-text {
+  flex: 1 1 360px;
+  min-width: 220px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .buzzworthy-row {
+    flex-direction: column;
+  }
+  .buzzworthy-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .buzzworthy .im {
+    width: 60%;
+  }
+}
+footer {
+  background: #000; 
+  color: #fff; /
+  text-align: center; 
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover,
+footer a:focus {
+  color: #ffd700;
+  text-decoration: underline;
+  outline: none;
+}
+ h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 70px;
+  background-color: rgb(255, 255, 255);
 }
