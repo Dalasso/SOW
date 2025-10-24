@@ -180,3 +180,39 @@ main > section + section {
 padding: 25px;
 padding-bottom: 10px;
 }
+.yodezeen-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.yodezeen-images {
+  flex: 0 0 890px;
+}
+.yodezeen-images .im {
+  width: 100%;
+  height: 450px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.yodezeen-text {
+  flex: 1 1 360px;
+  min-width: 220px;
+  line-height: 1.6;
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 720px) {
+  .yodezeen-row {
+    flex-direction: column;
+  }
+  .yodezeen-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .yodezeen-images .im {
+    width: 60%;
+  }
+}
